@@ -19,17 +19,17 @@ make install
 * press the reset button on the Arduino Nano 33 IoT twice
 * observe the LED start to pulse slowly
 
-1. Compile the firmware
-  ```sh
-  make build
-  ```
-1. Pack the firmware for installation
-  ```sh
-  make pack
-  ```
-1. Deploy the firmware to the Arduino Nano 33 IoT
-  ```sh
-    make deploy
-  ```
+1. Build the firmware
+    ```sh
+    make build
+    ```
+1. Pack the firmware ready for flashing
+    ```sh
+    make pack
+    ```
+1. Flash the firmware onto the Arduino Nano 33 IoT
+    ```sh
+      make deploy
+    ```
 
-Note: Each step depends on the previous one, so you can just call `make deploy` to do the whole process
+Note: Each step depends on the previous one, so `make deploy` will call `make pack`, which will call `make build` where needed.
