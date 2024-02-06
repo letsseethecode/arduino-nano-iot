@@ -33,3 +33,20 @@ make install
     ```
 
 Note: Each step depends on the previous one, so `make deploy` will call `make pack`, which will call `make build` where needed.
+
+## Connecting to USB
+
+Use `screen` to connect to the USB port.
+```sh
+screen /dev/cu.usbmodemLSTC1
+```
+
+Send messages by:
+1. Ctrl-A
+1. : <enter>
+1. `exec !! echo "<message>"`
+
+Quite by:
+1. Ctrl-A
+1. Ctrl-K
+1. y

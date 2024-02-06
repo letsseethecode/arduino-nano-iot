@@ -28,7 +28,7 @@ pub unsafe fn setup_usb(
         UsbDeviceBuilder::new(bus_allocator, UsbVidPid(0x2222, 0x3333))
             .manufacturer("Fake company")
             .product("Serial port")
-            .serial_number("TEST")
+            .serial_number("LSTC")
             .device_class(USB_CLASS_CDC)
             .build(),
     );
