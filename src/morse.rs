@@ -13,7 +13,7 @@ pub type Buffer = [u8; 256];
 ///
 /// Return a signal (DIT, DAH, SPACE) from the buffer at a given index.
 ///
-pub fn get_signal(buffer: &Buffer, index: usize) -> u8 {
+pub fn get_signal_from_buffer(buffer: &Buffer, index: usize) -> u8 {
     let i = index / 4;
     let j = index % 4;
     (buffer[i] >> (j * 2)) & 0x3

@@ -71,18 +71,18 @@ fn main() -> ! {
         let now = timer.millis();
 
         set_led(
-            &mut led_index,
+            &mut led,
             now,
             &mut led_on_time,
             &mut led_off_time,
             &buffer,
             buffer_length,
-            &mut index,
+            &mut led_index,
         );
 
         unsafe {
             // NB Must be called at least once every 10ms to stay USB-compliant.
-            poll_usb(&timer, message, &buffer, count);
+            poll_usb(&timer, message, &buffer, buffer_length);
         }
     }
 }
