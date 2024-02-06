@@ -32,7 +32,7 @@ fn main() -> ! {
         &mut peripherals.NVMCTRL,
     );
     let core = CorePeripherals::take().unwrap();
-    let mut delay = Delay::new(core.SYST, &mut clocks);
+    let delay = Delay::new(core.SYST, &mut clocks);
     let gclk0 = clocks.gclk0();
     let mut timer = time::Timer::new(peripherals.TC5, &mut clocks, &gclk0, &mut peripherals.PM);
 
@@ -45,8 +45,6 @@ fn main() -> ! {
             pins.usb_dp,
         );
     }
-
-    // let clock = clocks.sercom2_core(&gclk0).unwrap();
 
     let mut buffer: [u8; 256] = [0; 256];
     let mut count: usize = 0;
