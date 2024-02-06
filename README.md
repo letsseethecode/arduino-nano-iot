@@ -42,11 +42,11 @@ screen /dev/cu.usbmodemLSTC1
 ```
 
 Send messages by:
-1. Ctrl-A
-1. : <enter>
+1. `Ctrl-A`
+1. `: <enter>`
 1. `exec !! echo "<message>"`
 
 Quite by:
-1. Ctrl-A
-1. Ctrl-K
-1. y
+1. `Ctrl-A`
+1. `Ctrl-K`
+1. `y`
