@@ -2,6 +2,13 @@
 .DEFAULT_GOAL = build
 SRC_FILES = $(shell find . -name "*.rs")
 
+install:
+	brew update
+	brew install arduino-cli
+	arduino-cli core install arduino:samd
+	cargo install cargo-binutils
+	rustup component add llvm-tools-preview
+
 target/thumbv6m-none-eabi/release/arduino-nano-33-iot: $(SRC_FILES)
 	cargo build --release
 
