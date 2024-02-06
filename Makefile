@@ -13,4 +13,5 @@ build: target/thumbv6m-none-eabi/release/arduino-nano-33-iot
 pack: target/arduino.bin
 
 deploy: pack
-	arduino-cli upload -i target/arduino.bin -b arduino:samd:nano_33_iot -p /dev/cu.usbmodem101
+	$(eval USB := $(shell ls /dev/cu.usbmodem*01 | head -n 1))
+	arduino-cli upload -i target/arduino.bin -b arduino:samd:nano_33_iot -p ${USB}
