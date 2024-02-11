@@ -4,6 +4,10 @@ This project is a starting platform to build applications on the
 Arduino Nano 33 IoT. It comes preconfigured with WiFi, Gyroscope, and
 serial via USB.
 
+# Acknowledgements
+
+This project was forked from https://github.com/sulami/arduino-nano-33 and then extended to meet our requirements.
+
 ## Building
 
 ### Install dependencies:
@@ -29,7 +33,7 @@ make install
     ```
 1. Flash the firmware onto the Arduino Nano 33 IoT
     ```sh
-      make deploy
+    make deploy
     ```
 
 Note: Each step depends on the previous one, so `make deploy` will call `make pack`, which will call `make build` where needed.

@@ -1,4 +1,4 @@
-.PHONY = build pack deploy
+.PHONY = build pack deploy clean
 .DEFAULT_GOAL = build
 SRC_FILES = $(shell find . -name "*.rs")
 
@@ -14,6 +14,9 @@ target/thumbv6m-none-eabi/release/arduino-nano-33-iot: $(SRC_FILES)
 
 target/arduino.bin: target/thumbv6m-none-eabi/release/arduino-nano-33-iot
 	rust-objcopy -O binary target/thumbv6m-none-eabi/release/arduino-nano-33-iot target/arduino.bin
+
+clean:
+	rm -rf target/
 
 build: target/thumbv6m-none-eabi/release/arduino-nano-33-iot
 

@@ -4,7 +4,6 @@
 #![allow(unused_variables)]
 
 mod morse;
-mod orientation;
 mod time;
 mod usb;
 
@@ -58,7 +57,8 @@ fn main() -> ! {
     let mut buffer: [u8; 256] = [0; 256];
     let mut buffer_length: usize = 0;
 
-    let message = "SOS  ";
+    let message = "SOS ";
+    // ... --- ... ' '
 
     convert_message_into_morse_buffer(&mut buffer, &mut buffer_length, message);
 
